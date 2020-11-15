@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_grafica"
+    app:startDestination="@id/listaMusicaFragment">
+    <fragment
+        android:id="@+id/listaMusicaFragment"
+        android:name="com.example.spotififi.ui.ListaMusicaFragment"
+        android:label="lista_musicas"
+        tools:layout="@layout/lista_musicas" >
+        <action
+            android:id="@+id/action_listaMusicaFragment_to_musicaFragment"
+            app:destination="@id/musicaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/musicaFragment"
+        android:name="com.example.spotififi.ui.MusicaFragment"
+        android:label="musica_fragment"
+        tools:layout="@layout/musica_fragment" />
+</navigation>
