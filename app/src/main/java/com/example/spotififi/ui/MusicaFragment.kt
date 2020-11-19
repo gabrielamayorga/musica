@@ -1,6 +1,5 @@
 package com.example.spotififi.ui
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.spotififi.R
 import com.example.spotififi.model.Musica
-import kotlinx.android.synthetic.main.item_musica.view.*
 import kotlinx.android.synthetic.main.musica_fragment.*
 
 class MusicaFragment : Fragment() {
@@ -23,18 +21,24 @@ class MusicaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         var view = inflater.inflate(R.layout.musica_fragment, container, false)
-        viewModel = ViewModelProvider(this).get(MusicaViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(MusicaViewModel::class.java)
 
         viewModel.musica.observe(viewLifecycleOwner, { musica ->
 
-            txtNomeMusica.setText(musica.nome)
+            txtNomeMusica.setText(musica.musica)
             txtArtista.setText(musica.artista)
+            txtFoto.setText(musica.foto)
 
             view.findViewById<Button>(R.id.btnSalvar).setOnClickListener {
-                val nome = txtNomeMusica.text.toString()
-                val artista = txtArtista.toString()
+                var musica = Musica(
+                    docId = musica.docId,
+                    musica = txtNomeMusica.text.toString(),
+                    artista = txtArtista.toString(),
+                    foto = txtFoto.text.toString()
+                )
 
-                viewModel.salvarMusica(Musica(id = musica.id, nome = nome, artista = artista))
+
+                viewModel.repository.salvarMusica(musica)
                 findNavController().navigateUp()
             }
         })

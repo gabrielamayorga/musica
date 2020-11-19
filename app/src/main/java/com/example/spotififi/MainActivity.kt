@@ -33,12 +33,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.itemMsc ->
                     navController.navigate(R.id.listaMusicaFragment)
-               /* R.id.itemMsc ->
-                    navController.navigate(R.id.musicaFragment)*/
-               /* R.id.itemMsc -> supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.fragment, listademusicas())
-                    .commit()*/
+
             }
             drawerLayout.closeDrawer(GravityCompat.START)
             true

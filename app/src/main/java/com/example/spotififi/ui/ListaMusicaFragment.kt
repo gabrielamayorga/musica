@@ -25,7 +25,7 @@ class ListaMusicaFragment : Fragment() {
         var recycler = view.findViewById<RecyclerView>(R.id.list)
         var viewModel = ViewModelProvider(requireActivity()).get(MusicaViewModel::class.java)
 
-        viewModel.listaMusicas.observe(requireActivity(), { musicas ->
+        viewModel.listademusicas.observe(requireActivity(), { musicas ->
             with(recycler){
                 adapter = MusicaAdapter(requireActivity(), viewModel, musicas)
             }

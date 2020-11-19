@@ -7,17 +7,16 @@
     android:layout_height="match_parent">
 
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/list"
-    android:name="com.example.spotififi.ui.ListaMusicaFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    app:layoutManager="LinearLayoutManager"
-    tools:context=".ui.ListaMusicaFragment"
-    tools:listitem="@layout/item_musica" >
-</androidx.recyclerview.widget.RecyclerView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:name="com.example.spotififi.ui.ListaMusicaFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F9E8FB"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".ui.ListaMusicaFragment"
+        tools:layout_editor_absoluteX="16dp"
+        tools:listitem="@layout/item_musica"></androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -28,6 +27,8 @@
         android:layout_marginBottom="36dp"
         android:clickable="true"
         android:src="@android:drawable/btn_star_big_on"
+        app:backgroundTint="#D767EA"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#F8EFEF" />
 </androidx.constraintlayout.widget.ConstraintLayout>

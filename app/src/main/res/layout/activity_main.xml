@@ -21,7 +21,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="Minhas Músicas"></androidx.appcompat.widget.Toolbar>
+            android:background="#EAAEF4"
+            app:title="Minhas Músicas"
+            app:titleTextColor="#F3EEEE"></androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -41,6 +43,7 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="407dp"
             android:layout_height="546dp"
+            android:background="#EACFEF"
             app:defaultNavHost="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

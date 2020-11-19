@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "113675081004",
+    "firebase_url": "https://spotififi-b00b9.firebaseio.com",
+    "project_id": "spotififi-b00b9",
+    "storage_bucket": "spotififi-b00b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113675081004:android:4696ee4beb5bff3df54889",
+        "android_client_info": {
+          "package_name": "com.example.spotififi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113675081004-rk71pho3acrvhn8h060813p4p55stkj9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClAIjRambcSQDTsmsdrNb649YclKiapwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113675081004-rk71pho3acrvhn8h060813p4p55stkj9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

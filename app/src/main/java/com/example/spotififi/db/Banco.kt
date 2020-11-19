@@ -1,4 +1,5 @@
 package com.example.spotififi.db
+/*
 
 import android.content.Context
 import androidx.room.Database
@@ -26,4 +27,4 @@ abstract class Banco : RoomDatabase(){
             return instance!!
         }
     }
-}
+}*/

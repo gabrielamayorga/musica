@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
+import com.bumptech.glide.Glide
 import com.example.spotififi.R
 import com.example.spotififi.model.Musica
+import com.google.firebase.storage.FirebaseStorage
 
 class MusicaAdapter(
+
     private val activity : FragmentActivity,
     private val viewModel: MusicaViewModel,
     private val musicas: List<Musica>
@@ -23,8 +26,22 @@ class MusicaAdapter(
 
     override fun onBindViewHolder(holder: MusicaViewHolder, position: Int) {
         val musica = musicas[position]
-        holder.idMusica.text = musica.id.toString()
-        holder.nomeMusica.text = musica.nome
+        holder.nomeMusica.text = musica.musica
+        holder.nomeArtista.text = musica.artista
+
+        val storage = FirebaseStorage.getInstance()
+        val storageReference = storage.getReference(musica.foto)
+        storageReference.downloadUrl.addOnSuccessListener { imageURL ->
+            Glide.with(activity)
+                .load(imageURL)
+                .into(holder.fotoArtista)
+        }
+
+        storageReference.downloadUrl.addOnFailureListener{
+            Glide.with(activity)
+                .load(R.drawable.artista_desconhecido)
+                .into(holder.fotoArtista)
+        }
 
         holder.itemView.setOnClickListener{view ->
             viewModel.musica.value = musica
@@ -37,7 +54,7 @@ class MusicaAdapter(
                   .setTitle("Leia")
                   .setMessage("Deseja excluir essa música?")
                   .setPositiveButton("Sim") { dialog, which ->
-                      viewModel.excluirMusica(musica.id)
+                      viewModel.repository.excluirMusica(musica.docId)
                   }
                   .setNegativeButton("Não", null)
                   .show()

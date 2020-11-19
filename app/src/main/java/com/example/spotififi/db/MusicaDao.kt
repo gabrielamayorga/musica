@@ -1,5 +1,6 @@
-package com.example.spotififi.db
 
+package com.example.spotififi.db
+/*
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
@@ -24,4 +25,4 @@ interface MusicaDao {
 
     @Query("DELETE FROM musicas")
     suspend fun apagarTodos()
-}
+}*/
